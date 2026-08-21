@@ -1,0 +1,25 @@
+activation:
+  positive:
+    - "Create a reusable agent skill from these research instructions and keep conditional knowledge modular."
+    - "Refactor this oversized SKILL.md using progressive disclosure and atomic references."
+    - "Audit these two agent skills and decide whether they should be merged or split."
+  negative:
+    - "Turn these meeting notes into Zettelkasten notes for Obsidian."
+    - "Explain the history of the Zettelkasten method."
+    - "Write a Python web scraper."
+behavior:
+  - name: create_skill
+    prompt: "Create a skill for competitor research where source-conflict handling is only occasionally needed."
+    expect:
+      - "core workflow remains in SKILL.md"
+      - "conditional source-conflict guidance is placed in a reference"
+      - "SKILL.md contains an explicit condition for loading that reference"
+  - name: avoid_over_fragmentation
+    prompt: "Refactor a 250-line skill whose instructions are used together on almost every invocation."
+    expect:
+      - "does not split content merely to reduce line count"
+      - "optimizes for minimum sufficient context"
+  - name: split_capabilities
+    prompt: "Audit a skill that both reviews pull requests and creates quarterly financial forecasts."
+    expect:
+      - "recommends separate skills because the capabilities are independently triggerable and procedurally unrelated"
