@@ -4,6 +4,12 @@ A meta-skill for creating and maintaining Agent Skills with Zettelkasten-inspire
 
 The goal is not to turn every note into a skill. The goal is to keep each skill as a coherent capability while moving conditional knowledge into focused, explicitly routed references.
 
+## Installation
+
+```bash
+npx skills add UN-9BOT/meta-skill-zettelkasten --skill meta-skill-zettelkasten
+```
+
 ## Model
 
 - **Skill** = independently triggerable capability.
@@ -44,7 +50,7 @@ python3 scripts/validate_skill.py .
 python3 scripts/analyze_skill.py .
 ```
 
-The validator checks frontmatter, missing references, orphaned references, and excessive `SKILL.md` line count. The analyzer produces a lightweight report of approximate context size and routing coverage.
+The validator checks frontmatter, missing references, orphaned references, and excessive `SKILL.md` line count. The analyzer produces a lightweight report of approximate context size and routing complexity.
 
 ## Design principle
 
